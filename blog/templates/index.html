@@ -1,0 +1,18 @@
+<head>
+  <style>
+   .colortext {
+     color: red; /* Красный цвет выделения */
+   }
+  </style>
+</head>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <span class="colortext">{{ tForm.as_table }}</span>
+        <button type="submit" class="colortext">отправить</button>
+    </form>
+</div>
+<div>
+        {% for posts in tPosts %}
+                <li><span class="colortext">{{ posts.text }} / {{ posts.created_date }}</span></li>
+            {% endfor %}
+
+</div>
